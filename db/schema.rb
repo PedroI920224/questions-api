@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180220042604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "questions", force: :cascade do |t|
+    t.string "context", null: false
+    t.string "real_answer", null: false
+    t.hstore "options", default: {}, null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "subject", default: "", null: false
+  end
 
 end
