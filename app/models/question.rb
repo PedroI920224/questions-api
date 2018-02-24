@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
-  belongs_to :quiz
-  validates :context, :real_answer, presence: true
+
+  belongs_to :quiz, optional: true
+  validates :context, :real_answer, :quiz, presence: true
+
 end
