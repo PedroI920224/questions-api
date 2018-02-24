@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220042604) do
+ActiveRecord::Schema.define(version: 20180221034203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +20,13 @@ ActiveRecord::Schema.define(version: 20180220042604) do
     t.string "context", null: false
     t.string "real_answer", null: false
     t.hstore "options", default: {}, null: false
+    t.bigint "quiz_id", null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
     t.string "subject", default: "", null: false
   end
 
+  add_foreign_key "questions", "quizzes"
 end
