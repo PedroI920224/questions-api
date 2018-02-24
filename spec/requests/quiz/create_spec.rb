@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Quiz Create Endpoint", type: :request do
+RSpec.describe "Create Quiz Endpoint", type: :request do
   describe "Post /quiz" do
     context "When the quiz subject is empty" do
       before do
