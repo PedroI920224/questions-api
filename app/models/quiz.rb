@@ -9,7 +9,7 @@ class Quiz < ApplicationRecord
 
   def validate_max_size
     if (questions.empty? || (questions.size >= NUMBER_OF_PERMITTED_QUESTIONS))
-      errors.add(:questions, :invalid_number_of_questions, message: "There must be at least questions")
+      errors.add(:questions, :invalid_number_of_questions, message: "There must be at least one questions to create the quiz")
     end
   end
 end
