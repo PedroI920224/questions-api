@@ -9,7 +9,7 @@ describe Quiz, type: :model do
         params = { quiz: {subject: "Mathematics"}}
         quiz = Quiz.create(params[:quiz])
         expect(quiz.persisted?).to eq(false)
-        expect(quiz.errors.messages).to eq({:questions=>["There must be at least questions"]})
+        expect(quiz.errors.messages).to eq({:questions=>["There must be at least one questions and no more than 20 questions to created the quiz"]})
       end
     end
     context "the questions attributes are less than 20 questions" do
@@ -60,7 +60,7 @@ describe Quiz, type: :model do
       it "Shouldn't create nested Quiz" do
         quiz = Quiz.create(@params[:quiz])
         expect(quiz.persisted?).to eq(false)
-        expect(quiz.errors.messages).to eq({:questions=>["There must be at least questions"]})
+        expect(quiz.errors.messages).to eq({:questions=>["There must be at least one questions and no more than 20 questions to created the quiz"]})
       end
     end
   end

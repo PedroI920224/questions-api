@@ -29,7 +29,7 @@ RSpec.describe "Quiz Create Endpoint", type: :request do
         expect(response).to have_http_status(:bad_request)
         error_response = JSON.parse(response.body)
         expect(Quiz.count).to eq(0)
-        expect(error_response).to eq({"error" => {"questions"=> ["There must be at least one questions to create the quiz"]}})
+        expect(error_response).to eq({"error" => {"questions"=> ["There must be at least one questions and no more than 20 questions to created the quiz"]}})
       end
     end
     context "When the someone question hasn't completed data" do
