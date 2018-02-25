@@ -6,4 +6,5 @@ describe Question, type: :model do
   it { should validate_presence_of(:quiz) }
   it { should allow_value({"A" => "Juanito", "B"=> "Pedrito"}).for(:options) }
   it { should belong_to(:quiz) }
+  it { should have_many(:answers) }
 end
