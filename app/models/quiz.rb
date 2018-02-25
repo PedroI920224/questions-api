@@ -2,6 +2,7 @@ class Quiz < ApplicationRecord
   NUMBER_OF_PERMITTED_QUESTIONS = 20
 
   has_many :questions
+  has_many :graded_quizzes
   validates :subject, presence: true
   validate :validate_max_size
 

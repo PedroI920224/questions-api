@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe Quiz, type: :model do
   it { should have_many(:questions) }
+  it { should have_many(:graded_quizzes) }
   it { should validate_presence_of(:subject) }
   describe "#nested_created_attributes" do
     context "there aren't questions" do
