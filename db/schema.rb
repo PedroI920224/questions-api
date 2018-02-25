@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180225210311) do
 
   create_table "graded_quizzes", force: :cascade do |t|
     t.string "author", null: false
-    t.decimal "mark", default: "0.0", null: false
+    t.decimal "total_score", default: "0.0", null: false
     t.bigint "quiz_id"
     t.index ["quiz_id"], name: "index_graded_quizzes_on_quiz_id"
   end
