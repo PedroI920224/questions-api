@@ -18,10 +18,19 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def update
+    quiz = Quiz.find_by_id(params[:id])
+    if quiz.update(quiz_params)
+      render json: {quiz_id: quiz.id}, status: :ok
+    else
+      render json: {error: quiz.errors.messages}, status: :bad_request
+    end
+  end
+
   private
   
   def quiz_params
-    params.require(:quiz).permit(:subject, questions_attributes: [:context, :real_answer, options:[]])
+    params.require(:quiz).permit(:subject, questions_attributes: [:id, :context, :real_answer, options:{}])
   end
 
   def build_response
