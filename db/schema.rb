@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221034203) do
+ActiveRecord::Schema.define(version: 20180225210311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "graded_quizzes", force: :cascade do |t|
+    t.string "author", null: false
+    t.decimal "mark", default: "0.0", null: false
+    t.bigint "quiz_id"
+    t.index ["quiz_id"], name: "index_graded_quizzes_on_quiz_id"
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string "context", null: false
@@ -28,5 +35,6 @@ ActiveRecord::Schema.define(version: 20180221034203) do
     t.string "subject", default: "", null: false
   end
 
+  add_foreign_key "graded_quizzes", "quizzes"
   add_foreign_key "questions", "quizzes"
 end
