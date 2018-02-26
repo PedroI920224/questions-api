@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 quiz = Quiz.new(subject: "Mathematics")
-question1 = quiz.questions.build(context: "What is 24 + 3?", real_answer: "A", options: {"A"=>"27", "B"=>"22", "C"=>"23"})
+question1 = quiz.questions.build(context: "What is 23 + 3?", real_answer: "A", options: {"A"=>"26", "B"=>"22", "C"=>"23"})
 question2 = quiz.questions.build(context: "What is 24 + 4?", real_answer: "A", options: {"A"=>"28", "B"=>"22", "C"=>"23"})
+question3 = quiz.questions.build(context: "What is 1980 + 30?", real_answer: "B", options: {"A"=>"28", "B"=>"2010", "C"=>"23"})
+question4 = quiz.questions.build(context: "What is 24 + 4?", real_answer: "A", options: {"A"=>"28", "B"=>"22", "C"=>"23"})
 quiz.save
