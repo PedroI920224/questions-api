@@ -29,8 +29,8 @@ To run the test suite is necessary run:
 
 ### Deployment instructions
 Different enpoints are:
-* post /quizzes
-To create a couple of quizzes and questions, the params have the next structure:
+
+* To create a couple of quizzes and questions use the endpoint _**post /quizzes**_ with the params as follow:
 ```ruby
   params {
     subject: "Mathematics", questions_attributes: [
@@ -39,10 +39,10 @@ To create a couple of quizzes and questions, the params have the next structure:
     ]
   }
 ```
-*  get /quizzes/:id
-  to return all information in a quiz where the :id is the quiz id
-*  put /quizzes/:id, params: @params
-  to update something information in a quiz where the :id is the quiz id, and the structure params are:
+* To return all information in a quiz with id :id use _**get /quizzes/:id**_
+  
+* To update some information in a quiz with id :id use _**put /quizzes/:id**_, with the params as follow:
+  
   params {
     subject: "Mathematics", questions_attributes: [
       {context: "What is 26 + 1?", real_answer: "A", options: {"A"=>"27", "B"=>"22", "C"=>"23"}},
@@ -50,9 +50,9 @@ To create a couple of quizzes and questions, the params have the next structure:
     ]
   }
 
-  to Graded one quiz:
+* To Grade a quiz:
 
-* post "/graded_quizzes", params: @params
+ post "/graded_quizzes", params: @params
   to create a Graded_Quiz where the params are:
 
   @params = { graded_quiz: {
