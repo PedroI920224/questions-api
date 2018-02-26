@@ -5,7 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.3.3
+* Ruby On Rails: 5.1.5
+* Docker compose: version 3
 
 * System dependencies
 
