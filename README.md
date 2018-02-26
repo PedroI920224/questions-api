@@ -43,13 +43,14 @@ Different enpoints are:
   
 * To update some information in a quiz with id :id use _**put /quizzes/:id**_, with the params as follow:
   
+```ruby
   params {
     subject: "Mathematics", questions_attributes: [
       {context: "What is 26 + 1?", real_answer: "A", options: {"A"=>"27", "B"=>"22", "C"=>"23"}},
       {context: "What is 24 + 2?", real_answer: "B", options: {"A"=>"27", "B"=>"26", "C"=>"23"}}
     ]
   }
-
+```
 * To Grade a quiz:
 
  post "/graded_quizzes", params: @params
