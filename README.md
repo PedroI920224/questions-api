@@ -1,6 +1,6 @@
 # QUESTIONS API
 
-In this document you will find information resume about cosa1, cosa2, cosa 3
+In this document you will find information resume about the API can create, update and show one quiz with its questions, for other side is possible found graded one question too.
 
 ## Requirements
 The minimum requirements to run this project are:
