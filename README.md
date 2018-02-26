@@ -28,10 +28,10 @@ To run the test suite is necessary run:
 * ```sudo docker-compose run web bundle exec rspec spec```
 
 ### Deployment instructions
-Different enpoints are the next:
-* post /quizzes, params: @params
-To create an couple of quiz and questions, and the params have the next structure:
-```JSON
+Different enpoints are:
+* post /quizzes
+To create a couple of quizzes and questions, the params have the next structure:
+```ruby
   params {
     subject: "Mathematics", questions_attributes: [
       {context: "What is 26 + 1?", real_answer: "A", options: {"A"=>"27", "B"=>"22", "C"=>"23"}},
