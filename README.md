@@ -51,11 +51,8 @@ Different enpoints are:
     ]
   }
 ```
-* To Grade a quiz:
-
- post "/graded_quizzes", params: @params
-  to create a Graded_Quiz where the params are:
-
+* To graded a quiz is use _**post /graded_quizzes**_, with the params as follow:
+```ruby
   @params = { graded_quiz: {
     quiz_id: @quiz.id, author: "Juanito", answer_attributes: [
       {question_id: @qt3.id, user_answer: "D"},
@@ -63,7 +60,7 @@ Different enpoints are:
       {question_id: @qt2.id, user_answer: "B"}
     ]
   }
+ ```
 
 
-* put /graded_quizzes/:id
-  to show the summit of one question and the score, the :id is the Graded Quiz id
+* To return a summit of a graded quiz use _**put /graded_quizzes/:id**_, where :id is the graded quiz id.
