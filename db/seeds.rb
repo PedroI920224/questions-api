@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+quiz = Quiz.new(subject: "Mathematics")
+question1 = quiz.questions.build(context: "What is 24 + 3?", real_answer: "A", options: {"A"=>"27", "B"=>"22", "C"=>"23"})
+question2 = quiz.questions.build(context: "What is 24 + 4?", real_answer: "A", options: {"A"=>"28", "B"=>"22", "C"=>"23"})
+quiz.save
